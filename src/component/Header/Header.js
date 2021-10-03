@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIndustry } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom';
 
 const element = <FontAwesomeIcon icon={faIndustry} />
 const Header = () => {
@@ -16,10 +17,10 @@ const Header = () => {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
                 >
-                <Nav.Link href="/home">Home</Nav.Link>
-                <Nav.Link href="/other">Check-My-Error-Page-Here</Nav.Link>
-                <Nav.Link href="/details">Details</Nav.Link>
-                <Nav.Link href="/chart">Chart</Nav.Link>
+                <NavLink className="text-light me-4 text-decoration-none" to="/home">Home</NavLink>
+                <NavLink className="text-light me-4 text-decoration-none" to="/other">Check-My-Error-Page-Here</NavLink>
+                <NavLink className="text-light me-4 text-decoration-none" to="/details">Details</NavLink>
+                <NavLink className="text-light me-4 text-decoration-none" to="/chart">Chart</NavLink>
                 </Nav>
             </Navbar.Collapse>
             </Container>

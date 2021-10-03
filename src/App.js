@@ -7,10 +7,14 @@ import Footer from './component/Footer/Footer';
 import Error from './component/Error/Error';
 import Details from './component/Details/Details';
 import VisitorDetails from './component/VisitorDetails/VisitorDetails';
+import { createContext } from 'react';
+export const NameContext = createContext();
 
 function App() {
+  const magic = 'Hello this is magic,I am here without props.Guess what? i am context api!!!'
   return (
-    <div className="App">
+    <NameContext.Provider value={magic}>
+      <div className="App">
       <BrowserRouter>
       <Header></Header>
         <Switch>
@@ -33,6 +37,7 @@ function App() {
         <Footer></Footer>
       </BrowserRouter>
     </div>
+    </NameContext.Provider>
   );
 }
 

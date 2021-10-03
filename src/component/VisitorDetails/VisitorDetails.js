@@ -1,8 +1,10 @@
-import React, {useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import { Card,Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
+import { NameContext } from '../../App';
 
 const VisitorDetails = () => {
+    const magic = useContext(NameContext)
     const history = useHistory()
     const {visitorId} = useParams()
     const [details,setDetails] = useState([])
@@ -33,6 +35,7 @@ const VisitorDetails = () => {
                     <p className="text-primary mt-2">dog image for completed value 'true' and cat image for completed value 'false'</p>
                     <br />
                     </Card.Text>
+                    <p>{magic}</p>
                 <Button onClick={backtoHome} className="m-1" variant="primary">Back to home</Button>
                 <Button onClick={backtoPrivious} className="m-1" variant="dark">Previous page</Button>
             </Card.Body>
